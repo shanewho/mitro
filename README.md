@@ -4,6 +4,9 @@ Mitro saves all your passwords, synchronizes them across all your devices, and l
 
 If you are a user, install it from the [Mitro web site](https://www.mitro.co/). If you have any questions, you can ask on the [mitro-dev@googlegroups.com](https://groups.google.com/forum/#!forum/mitro-dev) mailing list, or [send @MitroCo a tweet](https://www.twitter.com/MitroCo).
 
+## Deploy to Heroku
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/shanewho/mitro/tree/heroku)
+
 
 ## Quick Start
 
