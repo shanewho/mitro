@@ -1,0 +1,13 @@
+{
+  "name": "Mitro Server",
+  "description": "The Mitro password manager server component",
+  "website": "https://github.com/mitro-co/mitro",
+  "success_url": "/welcome",
+  "addons": ["heroku-postgresql:hobby-dev", "papertrail"],
+  "env": {
+    "RAILS_ENV": "production"
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}
