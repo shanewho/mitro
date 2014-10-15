@@ -8,6 +8,6 @@
     "RAILS_ENV": "production"
   },
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
+    "postdeploy": "./test.sh"
   }
 }
