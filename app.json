@@ -6,7 +6,7 @@
   "addons": ["heroku-postgresql:hobby-dev", "papertrail"],
   "env": {
     "RAILS_ENV": "production",
-    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-ruby",
+    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-ruby"
   },
   "scripts": {
     "postdeploy": "./test.sh"
