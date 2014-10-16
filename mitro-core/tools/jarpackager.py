@@ -30,6 +30,9 @@ def unpack_jar(jarpath, tempdir):
 
 
 def copy_dir(subdir, tempdir):
+    print "subdir: %s" % (subdir)
+    print "tempdir: %s" % (tempdir)
+
     assert subdir[-1] != '/'
     subdir += '/'
     # -a: archive mode; keeps permissions etc
