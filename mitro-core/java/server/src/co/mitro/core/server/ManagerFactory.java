@@ -146,7 +146,8 @@ public class ManagerFactory implements LifeCycle.Listener {
 
               String username = dbUri.getUserInfo().split(":")[0];
               String password = dbUri.getUserInfo().split(":")[1];
-              dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+              //dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+              dbUrl = "jdbc:" + dbUrl;//postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
           } catch (URISyntaxException e) {
               logger.error("URI Syntax Exception", e);
           }
