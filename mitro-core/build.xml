@@ -143,6 +143,9 @@
     <echo>THIS IS THE PATH</echo>
     <property environment="my_env" />
     <echo>
+    Database URL
+        ${my_env.DATABASE_URL}
+        --
         ${my_env.PATH}
         ${my_env.path}
     </echo>
