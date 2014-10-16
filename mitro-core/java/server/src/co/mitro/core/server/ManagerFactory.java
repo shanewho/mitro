@@ -133,11 +133,26 @@ public class ManagerFactory implements LifeCycle.Listener {
    * @param mode determines if the Manager can be used for writes or not.
    */
   public ManagerFactory(String databaseUrl, ManagerPool pool, long pollPeriod, TimeUnit unit, ConnectionMode mode) {
-    this.databaseUrl = databaseUrl;
-    this.pool = pool;
-    this.pollMs = unit.toMillis(pollPeriod);
-    this.mode = mode;
-    tryCreateTables();
+      String dbUrl = databaseUrl;
+      String url = System.getenv("DATABASE_URL");
+      if(url != null) {
+          try {
+              URI dbUri = new URI(url);
+
+              String username = dbUri.getUserInfo().split(":")[0];
+              String password = dbUri.getUserInfo().split(":")[1];
+              dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+          } catch (URISyntaxException e) {
+          }
+      }
+
+      this.databaseUrl = dbUrl;
+
+      //this.databaseUrl = databaseUrl;
+      this.pool = pool;
+      this.pollMs = unit.toMillis(pollPeriod);
+      this.mode = mode;
+      tryCreateTables();
   }
 
   /**
