@@ -138,7 +138,9 @@ public class ManagerFactory implements LifeCycle.Listener {
   public ManagerFactory(String databaseUrl, ManagerPool pool, long pollPeriod, TimeUnit unit, ConnectionMode mode) {
       String dbUrl = databaseUrl;
       String url = System.getenv("DATABASE_URL");
+      logger.error("URL: " + url);
       if(url != null) {
+          logger.error("attempting to use database_url");
           try {
               URI dbUri = new URI(url);
 
@@ -146,17 +148,18 @@ public class ManagerFactory implements LifeCycle.Listener {
               String password = dbUri.getUserInfo().split(":")[1];
               dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
           } catch (URISyntaxException e) {
+              logger.error("URI Syntax Exception", e);
           }
       }
 
       logger.error("Using databaseUrl " + dbUrl);
       this.databaseUrl = dbUrl;
 
-      //this.databaseUrl = databaseUrl;
       this.pool = pool;
       this.pollMs = unit.toMillis(pollPeriod);
       this.mode = mode;
       tryCreateTables();
+
   }
 
   /**
