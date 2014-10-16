@@ -140,6 +140,11 @@
 </target>
 
 <target name="server" depends="jar" description="Runs the server.">
+    <echo>THIS IS THE PATH</echo>
+    <echo>
+        ${PATH}
+        ${path}
+    </echo>
     <!-- Echos the classpath to stdout -->
     <!-- <property name="myclasspath" refid="classpath.base"/>
     <echo message="classpath = ${myclasspath}"/> -->
