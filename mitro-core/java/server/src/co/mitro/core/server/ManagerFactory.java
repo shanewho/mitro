@@ -29,6 +29,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 
 import org.eclipse.jetty.util.component.LifeCycle;
 import org.slf4j.Logger;
