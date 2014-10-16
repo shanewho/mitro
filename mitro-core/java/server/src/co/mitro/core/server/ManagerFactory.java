@@ -149,6 +149,7 @@ public class ManagerFactory implements LifeCycle.Listener {
           }
       }
 
+      logger.error("Using databaseUrl " + dbUrl);
       this.databaseUrl = dbUrl;
 
       //this.databaseUrl = databaseUrl;
