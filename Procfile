@@ -1,1 +1,1 @@
-web: java -ea -DgenerateSecretsForTest=true -Dport=$PORT -jar mitro-core/build/mitrocore.jar 
+web: java -ea -DgenerateSecretsForTest=true -Dhttps_port=9443 -Dhttp_port=$PORT -jar build/mitrocore.jar 
