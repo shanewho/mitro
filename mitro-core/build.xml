@@ -157,6 +157,7 @@
     <java jar="${outjar}" fork="true" dir="/">
         <assertions><enable/></assertions>
         <sysproperty key="generateSecretsForTest" value="true"/>
+        <sysproperty key="port" value="443"/>
     </java>
 </target>
 
