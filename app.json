@@ -1,0 +1,10 @@
+{
+  "name": "Mitro Server",
+  "description": "The Mitro password manager server component",
+  "website": "https://github.com/mitro-co/mitro",
+  "success_url": "https://github.com/shanewho/mitro-heroku-buildpack",
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "env": {
+    "BUILDPACK_URL": "https://github.com/shanewho/mitro-heroku-buildpack.git"
+  }
+}
