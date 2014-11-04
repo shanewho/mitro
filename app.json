@@ -8,6 +8,6 @@
     "RANDOM_KEY": {
       "description": "A secret key used to sign messages.",
       "generator": "secret"
-    },
+    }
   }
 }
